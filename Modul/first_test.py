@@ -20,10 +20,15 @@ def my_sum(list_of_numbers):
     Не использовать встроенные функции суммирования.
 
     """
-    suma = 0
-    for numbers in list_of_numbers:
-        suma += int(numbers)
-    return suma
+
+    if len(list_of_numbers) == 2:
+        return list_of_numbers[0] + list_of_numbers[1]
+    return list_of_numbers[0] + my_sum(list_of_numbers[1:])
+
+    # suma = 0
+    # for numbers in list_of_numbers:
+    #     suma += int(numbers)          Cкучний варіант 
+    # return suma
     #  ...wite your code here
 
 
