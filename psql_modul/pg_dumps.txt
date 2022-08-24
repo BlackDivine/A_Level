@@ -1,0 +1,40 @@
+********* QUERY **********
+SELECT CONCAT('This is ', name, ', ', case when gender = 'm' then 'he ' ELSE 'she ' END, 'email ', email) as info from users 
+;
+**************************
+
+                    info                    
+--------------------------------------------
+ This is Vasya, he email mmm@mmail.com
+ This is Alex, he email mmm@gmail.com
+ This is Alexey, he email alexey@gmail.com 
+ This is Helen, she email hell@gmail.com
+ This is Jenny, she email eachup@gmail.com
+ This is Lora, she email tpicks@gmail.com
+(6 rows)
+
+********* QUERY **********
+SELECT name, COUNT(*) AS "words" FROM vocabulary FULL JOIN word on(vocabulary.id=vocabulary_id)GROUP BY name;
+**************************
+
+  name   | words 
+---------+-------
+ animals |    10
+ school  |    10
+ SF      |    10
+ human   |    10
+ nature  |    10
+(5 rows)
+
+
+
+********* QUERY **********
+SELECT CONCAT ('We have ', count (*), CASE WHEN gender = 'm' THEN 'boys!' ELSE 'girls!' END) as "Gender information:" from users  group by gender;
+**************************
+
+ Gender information: 
+---------------------
+ We have 3boys!
+ We have 3girls!
+(2 rows)
+
